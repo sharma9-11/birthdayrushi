@@ -7,13 +7,10 @@ const bgMusic = document.getElementById('bg-music');
 const hintText = document.getElementById('hint-text');
 const flashOverlay = document.getElementById('flash-overlay');
 const balloonContainer = document.getElementById('balloon-container');
-
-// 0 = Closed Book, 1 = Open Book, 2 = Letter, 3 = Finale Video
 let clickState = 0; 
 
 document.body.addEventListener('click', () => {
     
-    // STEP 1: Open the book & Start Music
     if (clickState === 0) {
         notebook.classList.add('is-open');
         hintText.style.opacity = '0';
@@ -25,7 +22,6 @@ document.body.addEventListener('click', () => {
         setTimeout(() => { clickState = 1; }, 500); 
     }
     
-    // STEP 2: Hide Book, Show Letter
     else if (clickState === 1) {
         step1Container.classList.add('hidden-section');
         
@@ -38,24 +34,21 @@ document.body.addEventListener('click', () => {
         setTimeout(() => { clickState = 2; }, 1500);
     }
     
-    // STEP 3: Hide Letter, Trigger Explosion, Show Video
     else if (clickState === 2) {
         step2Letter.classList.remove('visible-section');
         step2Letter.classList.add('hidden-section');
         
         triggerExplosion();
         
-        // Wait for the flash to happen, then fade in the video
         setTimeout(() => {
             step2Letter.style.display = 'none';
             step3Video.classList.remove('hidden-section');
             step3Video.classList.add('visible-section');
             
-            // Start playing the dancing video
             danceVideo.play();
         }, 500);
         
-        clickState = 3; // End of sequence
+        clickState = 3; 
     }
 });
 
