@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <audio id="bg-music" src="sombr.mp3" loop></audio>
+
+    <div id="flash-overlay"></div>
+
+    <div class="instruction" id="hint-text">Tap the notebook to open ❤️</div>
+
+    <div class="book-container" id="step1-notebook">
+        <div class="book" id="notebook">
+            
+            <div class="page right-page">
+                <div class="photo-grid">
+                    <div class="photo-frame"><img src="1.jpg" alt="Photo 5"><span>Photo 5</span></div>
+                    <div class="photo-frame"><img src="2.jpg" alt="Photo 6"><span>Photo 6</span></div>
+                    <div class="photo-frame"><img src="3.jpg" alt="Photo 7"><span>Photo 7</span></div>
+                    <div class="photo-frame"><img src="4.jpg" alt="Photo 8"><span>Photo 8</span></div>
+                </div>
+            </div>
+
+            <div class="cover-wrapper" id="cover-flip">
+                
+                <div class="page cover-back">
+                    <div class="photo-grid">
+                        <div class="photo-frame"><img src="5.jpg" alt="Photo 1"><span>Photo 1</span></div>
+                        <div class="photo-frame"><img src="6.jpeg" alt="Photo 2"><span>Photo 2</span></div>
+                        <div class="photo-frame"><img src="7.jpeg" alt="Photo 3"><span>Photo 3</span></div>
+                        <div class="photo-frame"><img src="8.jpeg" alt="Photo 4"><span>Photo 4</span></div>
+                    </div>
+                </div>
+
+                <div class="page cover-front">
+                    <h1>Our Memories</h1>
+                    <div class="heart-icon">💖</div>
+               </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="step2-letter" class="hidden-section">
+        <div class="letter-paper">
+            <h2>For You,</h2>
+            <p>
+                Some people walk into your life quietly,<br>
+                and somehow become the loudest part of your happiness.<br>
+                You didn’t just become my best friend,<br>
+                you became the place I go when the world feels too heavy.<br>
+                I don’t think you realize how much light you carry,<br>
+                how effortlessly you make things better just by being there.<br>
+                If I could, I’d pause time on the moments we laugh the hardest,<br>
+                just so they never have to end.<br>
+                You’re not just important to me,<br>
+                you’re irreplaceable in ways I’ll probably never fully explain.<br>
+                And on your birthday,<br>
+                I don’t just celebrate the day you were born.<br>
+                I celebrate the fact that somehow,<br>
+                out of everyone in this world…<br>
+                I got lucky enough to know you.</p>
+            <p class="signature">- Sajal</p>
+        </div>
+        <div class="instruction">Tap anywhere for a surprise ✨</div>
+    </div>
+
+    <div id="step3-video" class="hidden-section">
+        <div class="video-wrapper">
+            <video id="dance-video" src="dance.mp4" loop muted playsinline></video>
+        </div>
+        <h2 class="finale-text">Happy Birthday! 💖</h2>
+    </div>
+
+    <div id="balloon-container"></div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
