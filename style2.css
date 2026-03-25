@@ -2,7 +2,6 @@
 
 body {
     margin: 0;
-    /* Soft, romantic love theme background */
     background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
     height: 100vh;
     display: flex;
@@ -11,8 +10,6 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
 }
-
-/* Floating instruction text */
 .instruction {
     position: absolute;
     top: 15%;
@@ -27,10 +24,8 @@ body {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
 }
-
-/* --- THE 3D BOOK SETTINGS --- */
 .book-container {
-    perspective: 1500px; /* Gives the 3D depth effect */
+    perspective: 1500px;
 }
 
 .book {
@@ -40,8 +35,6 @@ body {
     transform-style: preserve-3d;
     transition: transform 1.2s ease-in-out;
 }
-
-/* When the book opens, it shifts right so the whole spread is centered on screen */
 .book.is-open {
     transform: translateX(160px);
 }
@@ -55,25 +48,21 @@ body {
     border-radius: 5px 15px 15px 5px;
     box-shadow: 5px 5px 15px rgba(0,0,0,0.15);
 }
-
-/* --- FLIPPING MECHANISM --- */
 .cover-wrapper {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    transform-origin: left center; /* Hinges on the left side */
+    transform-origin: left center; 
     transform-style: preserve-3d;
     transition: transform 1.2s ease-in-out;
     z-index: 10;
 }
 
 .book.is-open .cover-wrapper {
-    transform: rotateY(-180deg); /* Flips the cover open */
+    transform: rotateY(-180deg); 
 }
-
-/* --- PAGE DESIGNS --- */
 .cover-front {
     backface-visibility: hidden;
     background: linear-gradient(45deg, #ff758c 0%, #ff7eb3 100%);
@@ -83,7 +72,7 @@ body {
     align-items: center;
     color: white;
     cursor: pointer;
-    border-left: 5px solid #e05e75; /* Book spine */
+    border-left: 5px solid #e05e75;
 }
 
 .cover-front h1 {
@@ -103,22 +92,16 @@ body {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
-
-/* Inside Left Page (Attached to back of cover) */
 .cover-back {
     backface-visibility: hidden;
-    background-color: #fffafb; /* Soft paper color */
-    transform: rotateY(180deg); /* Faces inside by default */
+    background-color: #fffafb; 
+    transform: rotateY(180deg); 
     border-radius: 15px 5px 5px 15px;
 }
-
-/* Inside Right Page */
 .right-page {
     background-color: #fffafb;
     z-index: 1;
 }
-
-/* --- PHOTO GRID --- */
 .photo-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -139,8 +122,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* This hides the "Photo 1" text when you actually add an image */
 .photo-frame span {
     color: #ff758c;
     font-size: 0.9rem;
@@ -153,23 +134,17 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: 2;
-    /* Opacity is 0 until you put a real link in the src */
     opacity: 0; 
 }
-
-/* If the img src is valid (not "#"), it becomes visible */
 .photo-frame img:not([src="#"]) {
     opacity: 1;
 }
-/* --- NEW ADDITIONS FOR PAGE TRANSITIONS --- */
-
-/* Transition classes */
 .hidden-section {
     opacity: 0;
     pointer-events: none;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     position: absolute;
-    transform: translateY(20px); /* Slight slide up effect */
+    transform: translateY(20px);
     z-index: -1;
 }
 
@@ -179,11 +154,9 @@ body {
     transform: translateY(0);
     z-index: 20;
 }
-
-/* --- THE LETTER --- */
 .letter-paper {
     background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px); /* Gives a modern glass effect */
+    backdrop-filter: blur(10px); 
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -210,8 +183,6 @@ body {
     text-align: right;
     margin-top: 30px;
 }
-
-/* --- THE EXPLOSION & BALLOONS --- */
 #flash-overlay {
     position: fixed;
     top: 0;
@@ -242,8 +213,8 @@ body {
 
 .balloon {
     position: absolute;
-    bottom: -100px; /* Start below the screen */
-    font-size: 3rem; /* Emoji size */
+    bottom: -100px;
+    font-size: 3rem;
     animation: floatUp 4s ease-in forwards;
 }
 
@@ -252,7 +223,6 @@ body {
     50% { transform: translateY(-50vh) rotate(10deg) scale(1.1); }
     100% { transform: translateY(-110vh) rotate(-10deg) scale(1); opacity: 0; }
 }
-/* --- THE FINALE VIDEO --- */
 #step3-video {
     display: flex;
     flex-direction: column;
@@ -263,19 +233,19 @@ body {
 
 .video-wrapper {
     width: 80%;
-    max-width: 400px; /* Keeps it looking good on laptops and phones */
+    max-width: 400px;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     border: 5px solid white;
-    background-color: white; /* In case the video takes a second to load */
+    background-color: white; 
 }
 
 .video-wrapper video {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 15px; /* Matches the wrapper */
+    border-radius: 15px; 
 }
 
 .finale-text {
@@ -285,4 +255,47 @@ body {
     margin-top: 20px;
     text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
     animation: pulse 2s infinite;
+}
+@media (max-width: 768px) {
+    .book {
+        transform: scale(0.55); 
+    }
+    
+    .book.is-open {
+        transform: scale(0.55) translateX(160px); 
+    }
+    .cover-front h1 {
+        font-size: 2.2rem;
+    }
+    .instruction {
+        font-size: 1.1rem;
+        text-align: center;
+        width: 100%;
+        left: 0;
+    }
+    .letter-paper {
+        width: 85%;
+        padding: 25px;
+        font-size: 0.95rem;
+        max-height: 75vh; 
+        overflow-y: auto; 
+    }
+
+    .letter-paper h2 {
+        font-size: 2rem;
+    }
+
+    .signature {
+        font-size: 1.5rem;
+        margin-top: 15px;
+    }
+    .video-wrapper {
+        width: 90%;
+        border-width: 3px;
+    }
+
+    .finale-text {
+        font-size: 2rem;
+        text-align: center;
+    }
 }
